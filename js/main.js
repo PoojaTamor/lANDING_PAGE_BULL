@@ -59,7 +59,8 @@
         ],
         responsive: {
             0: {
-                items: 1
+                items: 2,
+                margin: 15
             },
             992: {
                 items: 2
