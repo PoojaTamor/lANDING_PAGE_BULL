@@ -163,7 +163,22 @@ body{
 .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
     color: var(--dark) !important;
 }
+.logo-full {
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth hide effect */
+}
 
+/* Half Logo (Always Visible) */
+.logo-half {
+  display: block;
+  margin-left: 10px; /* Optional spacing between logos */
+}
+
+/* Add a class to hide the full logo when scrolling */
+.hide-logo {
+  opacity: 0;
+  transform: translateY(-10px); /* Optional: Adds slight upward animation when hiding */
+  pointer-events: none;
+}
 @media (min-width: 992px) {
     .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
@@ -359,7 +374,7 @@ body{
 
 @media (max-width: 500px) {
   .Features-text {
-    font-size: 19px;
+    font-size: 16px;
     padding-left: 20px;
     color: #888888;
     font-family: "Mulish", sans-serif;
@@ -370,10 +385,10 @@ body{
   /* margin: 0px 0px 10px 19px; */
 }
 .feature-text h5 {
-  font-size: 18px;
+  font-size: 15px;
 }
 .feature-text p {
-  font-size: 11px;
+  font-size: 10px;
 
 }
 }
@@ -647,7 +662,7 @@ body{
     }
 
     /* Responsive Design */
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
         .coverage-card {
             flex-direction: column;
             text-align: center;
@@ -656,6 +671,18 @@ body{
         .coverage-card img {
             margin-bottom: 15px;
         }
+    } */
+    @media (max-width: 500px) {
+      .coverage-title{
+        font-size: 28px;
+      } 
+
+      .coverage-description {
+        margin-top: 25px;
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+
     }
 /* =============================================section-3-END=================== */
 /* =============================================section-4-=================== */
@@ -1035,7 +1062,7 @@ padding-inline: 15px;
 /* Pre-Cut Section Styles */
 .pre-cut-section {
     background-color: #000; /* Black background */
-    padding: 60px 0;
+    padding: 80px 0;
   }
   
   .pre-cut-content {
@@ -1210,6 +1237,13 @@ background-color: var(--primary);
     color: #333;
     border: 1px solid #ddd;
   }
+  .custom-table thead th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
+  }
   
 .tab-content .accordion-body{
   padding: 0px 0px;
@@ -1222,6 +1256,13 @@ background-color: var(--primary);
   padding: 17px;
   text-align: left;
   color: black;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
 }
 
   .accordion-button:not(.collapsed) {
@@ -1243,16 +1284,55 @@ background-color: var(--primary);
     /* font-weight: 300; */
   }
   
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .custom-table {
-      width: 100%;
-    }
-  
-    .custom-table td {
-      padding: 8px 10px;
-      font-size: 16px;
-    }
+  @media (max-width: 790px) {
+    .specifications-container {
+      padding: 40px;
+      margin-inline:0px;
+  }
+  .section-subtitle {
+    margin-block: 34px;
+}
+  }
+
+
+  @media (max-width:500px) {
+    .section-title {
+      font-size: 30px;
+  }
+  .specifications-container {
+    padding: 18px 0px 20px;
+    margin-inline: 0px;
+    border-radius: 12px;
+}
+.custom-table td {
+  padding: 10px 17px;
+  font-size: 12px;
+}
+.tab-content .accordion-button {
+  background-color: #e0e0e0;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 20px;
+}
+.nav-tabs .nav-link {
+  font-size: 15px;
+}
+.car-image {
+  max-width: 88%;
+  border-radius: 10px;
+}
+.custom-table thead th {
+  font-size: 15px;
+}
+.protection-series-section {
+  padding: 60px 23px;
+}
+.acc-col{
+  padding-inline: 30px;
+}
+.section-subtitle {
+  font-size: 11px;
+}
   }
   
 /* =============================================profection-section-end=================== */
@@ -1278,7 +1358,7 @@ background-color: var(--primary);
     margin-top: 10px;
     font-weight: 100;
     color: #888888;
-    padding-bottom: 70px;
+    padding-bottom: 85px;
     border-bottom: 1px solid #888888;
   }
   
@@ -1289,8 +1369,12 @@ background-color: var(--primary);
     overflow-y: auto; /* Enable vertical scrolling */
     padding: 20px;
     background-color:#000;
-    border-radius: 10px;
-
+    /* border-radius: 10px; */
+    border-bottom: 1px solid #888888;
+    /* border-bottom: 1px solid var(--primary); */
+    /* border-top: 1px solid var(--primary); */
+    border-top: 1px solid #888888;
+    
   }
   ::-webkit-scrollbar {
    display: none;
@@ -1319,6 +1403,7 @@ background-color: var(--primary);
     max-height: 200px; /* Set max height for scrolling content */
     overflow-y: scroll;
     padding-right: 10px; /* Adjust for scrollbar */
+
   }
   
   .stages-list {
@@ -1334,6 +1419,7 @@ background-color: var(--primary);
   .step-container {
     padding: 40px 40px;
     border-bottom: 1px solid #888888;
+
 
 }
 
@@ -1357,6 +1443,71 @@ background-color: var(--primary);
     margin-top: 1rem;
     font-weight: 100;
     padding-left: 80px;
+}
+
+@media (max-width: 790px) {
+  .protection-section .section-title {
+    font-size: 21px;
+}
+.stages-title {
+  font-size: 20px;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+}
+.section-description {
+  font-size: 16px;
+  margin-top: 10px;
+  padding-bottom: 45px;
+}
+.step-title {
+  font-size: 1.7rem;
+}
+.step-number {
+  font-size: 1.4rem;
+  padding-inline: 17px;
+}
+.step-description {
+  font-size: 16px;
+  padding-left: 80px;
+}
+.step-container {
+  padding: 40px 0px;
+}
+}
+@media (max-width: 500px) {
+  .stages-title {
+    font-size: 14px;
+    margin-top: 72px;
+}
+.stages-container {
+  height: 183px;
+  padding: 0px;
+  border-radius: 0px;
+  margin-top: 68px;
+}.section-description {
+  font-size: 12px;
+  margin-top: -3px;
+  padding-bottom: 30px;
+}
+.protection-section .section-title {
+  font-size: 15px;
+}
+.step-title {
+  font-size: 1rem;
+}
+.step-description {
+  font-size: 12px;
+  padding-left: 10px;
+}
+.step-number {
+  font-size: 1rem;
+  padding-inline: 10px;
+}
+.step-container {
+  padding: 15px 0px;
+}
 }
 
 /* <!-- ==========================================benifits-section-==================================== --> */
@@ -1412,6 +1563,51 @@ height: 238px;
 
  ::-webkit-scrollbar{
     display: none;
+  }
+
+  @media (max-width: 790px) {
+    .ppf-section h2 {
+      font-size: 1.7em;
+      margin-bottom: 70px;
+  }
+    .ppf-scroll-container {
+      height: 200px;
+    }
+    .ppf-cards img {
+      width: 120px;
+      height: 120px;
+  }
+  .ppf-cards {
+    align-items:start;
+}
+.ppf-cards-right h3 {
+  font-size: 20px;
+}
+.ppf-cards-right p {
+  font-size: 11px;
+}
+  }
+  @media (max-width: 500px) {
+    .ppf-section h2 {
+      font-size: 1.2em;
+      margin-bottom: 55px;
+  }
+  .ppf-section {
+    padding-block: 57px;
+}
+.ppf-scroll-container {
+  height: max-content;
+}
+.ppf-scroll-container {
+  display: flex;
+  flex-direction: column;
+  max-height: max-content;
+  overflow-y:none;
+}
+.ppf-cards-right h3 {
+  font-size: 14px;
+}
+
   }
 
 /* <!-- ==========================================benifits-section-end-==================================== --> */
