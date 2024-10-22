@@ -51,7 +51,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid sticky-top  navbarbg shadow-sm">
+    <div class="container-fluid sticky-top navbarbg shadow-sm" >
         <div class="container">
             <nav class="navbar navbar-expand-lg  navbar-light py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand">
@@ -68,6 +68,20 @@
                         
                     <!-- <img src="./img/logo.png" alt=""> -->
                 </a>
+                <a href="#" class="btn text-primary py-2 ms-sm-5 ENG d-sm-none" onclick="toggleDropdown(event)">
+                  <img src="https://img.icons8.com/ios/50/globe--v1.png" alt="Globe Icon" />
+                  <span>ENG</span>
+<i class="fa-solid fa-chevron-down"></i>
+                  <!-- ENG
+                  <i class="fa-solid fa-chevron-down"></i> -->
+                  <!-- <svg   viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 10L12 14L16 10" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg> -->
+                </a>
+                <div class="language-dropdown" id="languageDropdown">
+                  <a href="#" onclick="changeLanguage('en')">English</a>
+                  <a href="#" onclick="changeLanguage('fr')">German</a>
+              </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                   <svg width="27" height="32" viewBox="0 0 27 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0.843728 9.99998H26.1562C26.622 9.99998 26.9999 9.55194 26.9999 9.00001C26.9999 8.44798 26.6219 8.00003 26.1562 8.00003H0.843728C0.377959 8.00003 0 8.44807 0 9.00001C0 9.55194 0.378029 9.99998 0.843728 9.99998Z" fill="#FCCD16"/>
@@ -77,15 +91,30 @@
                     
                     <!-- <span class="navbar-toggler-icon"></span> -->
                 </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="navbar-nav ms-auto me-5 py-0 ">
+                
+                <div class="collapse navbar-collapse navbarsm " id="navbarCollapse">
+              
+                    <div class="navbar-nav ms-auto me-sm-5 py-lg-0 py-4   navrow">
                         <a href="#Overview" class="nav-item nav-link active">Overview</a>
-                        <a href="#About" class="nav-item nav-link">About</a>
+                        <a href="#About" class="nav-item nav-link about  ">About</a>
                         <a href="#Series" class="nav-item nav-link">PPF Series</a>
+                        <a href="#Series" class="nav-item nav-link d-sm-none">Contect</a>
                     </div>
-                    <a href="#" class="btn  text-primary py-2 ms-sm-5 ENG">ENG</a>
-                    <a href="#contect" class="btn  text-primary py-2 px-4 me-sm-4  Contact">Contact</a>
+                    <!-- <a href="#" class="btn  text-primary py-2 ms-sm-5 ENG">ENG</a> -->
+                    <a href="#" class="btn text-primary py-2 ms-sm-5 ENG d-none d-sm-inline-block" onclick="toggleDropdown(event)" id="languageButton">
+                      <img src="https://img.icons8.com/ios/50/globe--v1.png" alt="Globe Icon" />
+                      <span>ENG</span>
+                      <i class="fa-solid fa-chevron-down"></i>
+                  </a>
+                  
+                 <div class="language-dropdown"  id="languageDropdown">
+                  <a href="#" onclick="changeLanguage('en')">English</a>
+                  <a href="#" onclick="changeLanguage('fr')">German</a>
+              </div>
+                  
+                    <a href="#contect" class="btn  text-primary py-2 px-sm-4 me-sm-4  Contact d-none d-sm-block">Contact</a>
                     <!-- <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4">Sign Up</a> -->
+             
                 </div>
                 <!-- <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto py-0">
@@ -114,7 +143,7 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid py-sm-5 py-3 mb-sm-5 md-3 hero-header" id="Overview">
+    <div  class="container-fluid py-sm-5 py-3 mb-sm-5 md-3 hero-header"  id="Overview" >
         <div class="container py-md-5 py-2  hero-sec-row">
             <div class="row  ">
                 <div class="col-lg-11 hero-left-sec">
@@ -179,7 +208,7 @@
  <!-- ==================================================================section-2===================================== -->
 
  
- <div class="container section-2 mt-5 mt-sm-0"> <!-- 1st div: Open -->
+ <div class="container section-2 mt-5 mt-sm-0" > <!-- 1st div: Open -->
   <div class="row gx-5 gy-4"> <!-- 2nd div: Open -->
 
     <!-- Left Column -->
@@ -268,7 +297,7 @@
 
 
 <!-- ==================================================================circul-section==================================== -->
-<section class="statistics-section container-fluid">
+<section class="statistics-section container-fluid" >
     <div class="row gx-0 justify-content-sm-center justify-content-evenly align-items-center">
       <!-- Circle 1 -->
       <div class="col-3 circle-container">
@@ -334,7 +363,7 @@
 
 
     <!-- ==================================================================section-5===================================== -->
-    <div class="container mt-md-5 pt-md-5">
+    <div class="container mt-md-5 pt-md-5" >
         <div class="row gx-sm-5  gx-2">
           <div class="col-8 ">
            <div class="p-3"><h4 class="owl-heading">Our results and <br> customer happiness</h4></div>
@@ -348,7 +377,7 @@
           </div>
         </div>
       </div>
-      <div class="container owl-box">
+      <div class="container owl-box" >
         <div class="row gx-4 owl-carousel my-carousel">
           <div class="col">
             <img src="./img/image.png" alt=""class="img-fluid">
@@ -391,7 +420,7 @@
     <!-- ==================================================================section-5-END===================================== -->
 
 <!-- ==========================================protection-section===================================== -->
-<section class="protection-section container px-3">
+<section class="protection-section container px-3" >
   <div class="row  gx-0align-items-center">
     <!-- Left Side: Heading and Description -->
     <div class="col-lg-5 col-4 text-white ">
@@ -454,7 +483,7 @@
 <!-- ==========================================protection-section-end===================================== -->
 
 <!-- ==========================================benifits-section-==================================== -->
-<div class="ppf-section px-3 px-sm-5 ">
+<div class="ppf-section px-3 px-sm-5" >
   <h2 class="">Benefits of Paint <br> Protection Film</h2>
   <div class="ppf-scroll-container ">
       <div class="row gx-3  gy-5">
@@ -520,7 +549,7 @@
 
 
 <!-- ==================================================================section-3===================================== -->
-<div class="container coverage-box mt-5 pb-5  ">
+<div class="container coverage-box mt-5 pb-5" >
   <h1 class="coverage-title wow animate__animated animate__fadeInUp">COVERAGE</h1>
   <p class="coverage-description text-center pb-sm-5 ">PPF car coverage offers several benefits to customers, making it a popular choice among car <br> owners who want to protect their investment and keep their vehicles looking new.</p>
   <img src="./img/coverage.png" alt="" class="img-fluid">
@@ -816,7 +845,7 @@ Ultra High Gloss
 
               </div>
               <div class="col-md-6 text-center ">
-                <img src="./img/car1.png" alt="Gloss Car" class="car-image wow animate__animated animate__fadeInRight">
+                <img src="./img/gllos.png" alt="Gloss Car" class="car-image wow animate__animated animate__fadeInRight">
               </div>
             </div>
           </div>
@@ -892,7 +921,7 @@ Ultra High Gloss
                 </div>
               </div>
               <div class="col-md-6 text-center">
-                  <img src="./img/car1.png" alt="Gloss Car" class="car-image">
+                  <img src="./img/mett.png" alt="Gloss Car" class="car-image">
 
               </div>
             </div>
@@ -929,7 +958,7 @@ Ultra High Gloss
                     </table>
               </div>
               <div class="col-md-6 text-center">
-                <img src="./img/car1.png" alt="Gloss Car" class="car-image">
+                <img src="./img/coloring.png" alt="Gloss Car" class="car-image">
 
               </div>
             </div>
@@ -1132,10 +1161,13 @@ Ultra High Gloss
 
 
 
+        <div id="google_translate_element"></div>
 
 
 
-
+        <a href="https://wa.me/" class="btn-whatsapp-pulse">
+          <i class="fab fa-whatsapp"></i>
+        </a>
         
 
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa-solid fa-arrow-up-long"></i></i></a>
