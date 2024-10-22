@@ -84,3 +84,40 @@
     
 })(jQuery);
 
+// Toggle the dropdown visibility
+ function toggleDropdown(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('languageDropdown');
+    dropdown.style.display = dropdown.style.display === 'none' || dropdown.style.display === '' 
+        ? 'flex' 
+        : 'none';
+}
+
+// Load the Google Translate script dynamically
+function loadGoogleTranslate() {
+    const script = document.createElement('script');
+    script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(script);
+}
+
+// Initialize the Google Translate widget
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,fr,de,hi', // Add desired languages
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+}
+
+// Trigger translation for a specific language
+function translatePage(language) {
+    const selectElement = document.querySelector(".goog-te-combo");
+    if (selectElement) {
+        selectElement.value = language;
+        selectElement.dispatchEvent(new Event("change"));
+    }
+}
+
+// Load Google Translate on page load
+window.onload = loadGoogleTranslate;
+
