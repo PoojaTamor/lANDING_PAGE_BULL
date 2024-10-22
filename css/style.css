@@ -14,6 +14,10 @@
     --dark: #fff;
 }
 
+::selection{
+  background-color: var(--primary);
+  color: var(--light);
+}
 
 .btn {
     font-weight: 700;
@@ -101,7 +105,74 @@ body{
     box-shadow: none;
 }
 /* ================costome========== */
-.Contact ,.ENG{
+
+.ENG img {
+  width: 29px;
+  height: 29px;
+  margin-right: 10px;
+}
+
+.ENG {
+  display: inline-flex;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  padding: 0px 10px 0px 5px;
+  /* border: 2px solid black; */
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  background-color: white;
+  color: black !important;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: color 0.4s ease;
+
+}
+
+.ENG i {
+  margin-right: 10px;
+  font-size: 18px;
+  transition: color 0.4s ease;
+}
+
+
+.ENG .fa-chevron-down {
+  margin-left: 8px;
+  font-size: 12px;
+  transition: color 0.4s ease;
+}
+
+/* Hover Animation */
+.ENG::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(140deg, #FCCD16, #8d790d);
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.ENG:hover::before {
+  left: 0;
+}
+
+.ENG:hover {
+  color: white;
+}
+
+
+
+/* Ensure text and icons are above the background */
+.ENG span, .ENG i , .ENG img{
+  position: relative;
+  z-index: 1;
+}
+
+.Contact{
    color: var(--dark) !important;
 }
 
@@ -179,6 +250,30 @@ body{
   transform: translateY(-10px); /* Optional: Adds slight upward animation when hiding */
   pointer-events: none;
 }
+.language-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 150px;
+  background-color: white;
+  /* border: 1px solid #ddd; */
+  /* border-radius: 8px; */
+  display: none;
+  flex-direction: column;
+  z-index: -1;
+}
+
+.language-dropdown a {
+  padding: 8px 16px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+} 
+
+
+.language-dropdown a:hover {
+  background-color: #f0f0f0;
+}
+
 @media (min-width: 992px) {
     .navbar-light .navbar-nav .nav-link::before {
         position: absolute;
@@ -191,10 +286,6 @@ body{
         transition: .5s;
     }
 
-    .navbar-light .navbar-toggler-icon {
-        /* background-image: url("../img/menu.png")!important */
-        
-    }
     .navbar-light .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280,0,0,0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         display: none !important;
@@ -209,8 +300,16 @@ body{
 }
 
 @media (max-width: 991.98px) {
+  /* .navbarsm{
+    display: flex;
+  } */
+  .navbar-nav {
+    align-items: end;
+
+}
+
     .navbar-light .navbar-nav .nav-link  {
-        margin-left: 0;
+        /* margin-left: 0; */
         padding: 10px 0;
     }
     .hero-sec-row {
@@ -235,6 +334,29 @@ body{
 }
 
 @media (max-width: 500px) {
+  .ENG {
+    /* padding: 0px 10px 0px 6px; */
+    font-size: 10px;
+    margin-left: 87px;
+    font-weight: 600;
+}
+.navrow{
+  justify-content: space-around;
+}
+.ENG img {
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+}
+.ENG .fa-chevron-down {
+  margin-left: 8px;
+  font-size: 8px;
+}
+.ENG i {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
   .hero-sec-row {
     background-size: 77%;
     background-position: 125% 36%;
@@ -260,6 +382,16 @@ body{
 .navbar-light .navbar-nav .nav-link {
 
   font-size: 14px;
+
+}
+.language-dropdown a {
+  font-size: 11px;
+  padding: 8px 16px;
+}
+.language-dropdown {
+  position: absolute;
+  top: 56px;
+  right: 87px;
 
 }
 }
@@ -1376,9 +1508,9 @@ background-color: var(--primary);
     border-top: 1px solid #888888;
     
   }
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
    display: none;
-  }
+  } */
 
   .stages-title {
     font-size: 24px;
@@ -1444,6 +1576,32 @@ background-color: var(--primary);
     font-weight: 100;
     padding-left: 80px;
 }
+
+/* Custom Scrollbar for Stages Container */
+.stages-container::-webkit-scrollbar {
+  width: 3px; /* Adjust width as needed */
+}
+
+.stages-container::-webkit-scrollbar-track {
+  background: #000; /* Black background for the scrollbar track */
+}
+
+.stages-container::-webkit-scrollbar-thumb {
+  background: #ffcc00; /* Yellow color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+/* Optional: Hover effect for scrollbar thumb */
+.stages-container::-webkit-scrollbar-thumb:hover {
+  background: #ffd700; /* A lighter yellow on hover */
+}
+
+/* For Firefox */
+.stages-container {
+  scrollbar-width: thin; /* Options: auto, thin */
+  scrollbar-color: #ffcc00 #000; /* thumb color, track color */
+}
+
 
 @media (max-width: 790px) {
   .protection-section .section-title {
@@ -1561,9 +1719,32 @@ height: 238px;
     font-weight: 100;
   }
 
- ::-webkit-scrollbar{
-    display: none;
-  }
+  /* Custom Scrollbar for PPF Scroll Container */
+.ppf-scroll-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.ppf-scroll-container::-webkit-scrollbar-track {
+  background: #000; /* Black background for the scrollbar track */
+}
+
+.ppf-scroll-container::-webkit-scrollbar-thumb {
+  background: #ffcc00; /* Yellow color for the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+/* Optional: Hover effect for scrollbar thumb */
+.ppf-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #ffd700; /* Lighter yellow on hover */
+}
+
+/* For Firefox */
+.ppf-scroll-container {
+  scrollbar-width: thin; /* Options: auto, thin */
+  scrollbar-color: #ffcc00 #000; /* thumb color, track color */
+}
+
+ 
 
   @media (max-width: 790px) {
     .ppf-section h2 {
@@ -1611,3 +1792,78 @@ height: 238px;
   }
 
 /* <!-- ==========================================benifits-section-end-==================================== --> */
+/* ---------whatsap--- */
+.btn-whatsapp-pulse {
+  background: var(--primary);
+  color: white;
+  position: fixed;
+  bottom: 55px;
+  right: 28px;
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  height: 0;
+  z-index: 10;
+  padding: 25px;
+  text-decoration: none;
+  border-radius: 50%;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(252, 205, 22, 0.5); /* Updated to #FCCD16 */
+  }
+  80% {
+      box-shadow: 0 0 0 14px rgba(252, 205, 22, 0); /* Updated to #FCCD16 */
+  }
+}
+
+.btn-whatsapp-pulse-border {
+  bottom: 120px;
+  right: 20px;
+  animation-play-state: paused;
+}
+
+.btn-whatsapp-pulse-border::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  padding: 25px;
+  opacity: 0.75;
+  animation-name: pulse-border;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse-border {
+  0% {
+      padding: 25px;
+      opacity: 0.75;
+  }
+  75% {
+      padding: 50px;
+      opacity: 0;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+@media (max-width: 500px) {
+  .btn-whatsapp-pulse {
+    bottom: 34px;
+    right: 22px;
+    font-size: 31px;
+ 
+    padding: 23px;
+   
+}
+}
