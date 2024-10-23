@@ -1814,6 +1814,9 @@ height: 238px;
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
+.btn-whatsapp-pulse:hover{
+  color: black;
+}
 
 @keyframes pulse {
   0% {
