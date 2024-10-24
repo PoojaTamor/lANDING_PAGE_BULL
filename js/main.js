@@ -84,7 +84,18 @@
     
 })(jQuery);
 
-// Toggle the dropdown visibility
+window.addEventListener('scroll', function () {
+    const fullLogo = document.querySelector('.logo-full');
+    
+    if (window.scrollY > 10) {
+      fullLogo.classList.add('hide-logo'); // Hide full logo
+    } else {
+      fullLogo.classList.remove('hide-logo'); // Show full logo when at the top
+    }
+  });
+
+
+ // Toggle the dropdown visibility
  function toggleDropdown(event) {
     event.preventDefault();
     const dropdown = document.getElementById('languageDropdown');
@@ -121,3 +132,9 @@ function translatePage(language) {
 // Load Google Translate on page load
 window.onload = loadGoogleTranslate;
 
+document.querySelectorAll('#colorTabs .nav-link').forEach(tab => {
+    tab.addEventListener('click', function () {
+        const newImage = this.getAttribute('data-img');
+        document.getElementById('carImage').src = newImage;
+    });
+});
